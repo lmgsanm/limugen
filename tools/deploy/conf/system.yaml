@@ -1,0 +1,15 @@
+---
+dest_path:
+  - apps_home:'/uc/apps'
+  - tomcat_home:'/uc/tomcat'
+  - backup_home:'/uc/backup'
+  - version_home:'/uc/version'
+local_path:
+  - wars_home:'/local/wars/uwt'
+  - operation_home:'/local/operation/uwt'
+  - staic_home:'/local/static/uwt'
+syscode: 'uwt'
+modules:
+  uwt-app-web-main:
+    - 10.205.39.139
+    - 10.205.39.140
