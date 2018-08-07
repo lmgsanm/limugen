@@ -21,6 +21,7 @@ headers = {"User-Agent" : "Mozilla/5.0 (X11; U; Linux i686) Gecko/20071127 Firef
 #      "hardware_value",
 #     "tcp_established_value","tcp_close_wait_value","tcp_time_wait_value","tcp_listen_value"]}
 # """
+enumerate()
 
 #write csv_dict to monitor.csv
 # monitor_file = "·þÎñÆ÷¼à¿Ø.csv"

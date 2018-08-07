@@ -48,9 +48,9 @@ zabbix_password = "WSX@abc321,"
 zabbix_api = ZabbixAPI(zabbix_server)
 zabbix_api.login(zabbix_user,zabbix_password)
 
-item_id = '29459'
+item_id = '65937'
 time_till = time.mktime(datetime.now().timetuple())
-time_from = time_till - 60 * 60 * 24 * 7
+time_from = time_till - 60 * 60 * 24
 
 history = zabbix_api.history.get(itemids=[item_id],
                                  time_till = time_till,
@@ -70,5 +70,5 @@ if not len(history):
 for point in history:
 #     print("{0}: {1}".format(datetime.fromtimestamp(int(point['clock']))
 # .strftime("%x %X"), point['value']))
-    print(point['value'])
+    print(max(point['value']))
 
