@@ -11,9 +11,8 @@ zapi = ZabbixAPI(zabbix_server)
 zapi.login(zabbix_user,zabbix_password)
 
 item_id = '29459'
-host_id = '10263'
 time_till = time.mktime(datetime.now().timetuple())
-time_from = time_till - 60 * 60 * 4
+time_from = time_till - 60 * 60 * 24 * 7
 
 history = zapi.history.get(itemids = [item_id],
                             time_from = time_from,
@@ -30,5 +29,17 @@ if not len(history):
                                 limit = '5000',
                                 history = '0',
                                 )
+value_temp = []
 for point in history:
-    print(point['value'])
+    value_temp.append(int(point["value"]))
+    num = len(value_temp)
+    sum = 0
+    for i in value_temp:
+        sum = sum + float(i)
+    value_temp_max = float(max(value_temp))
+    value_temp_average = float(round(float(sum) / float(num), 3))
+    value_list = [value_temp_average, value_temp_max]
+# print(value_list)
+print(value_temp)
+print(max(value_temp))
+print(min(value_temp))

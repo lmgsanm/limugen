@@ -125,16 +125,15 @@ def get_item_data(ip,zabbix_key):
 
 if __name__ == "__main__":
 # hostgroup = sys.argv[1]
-    hostgroup = "gis"
-#monitor_keys = [ 'cpu.usage','vm.memory.usage','tcp.status["CLOSE_WAIT"]','tcp.status["ESTABLISHED"]','tcp.status["TIME_WAIT"]']
+    hostgroup = "ucb"
     monitor_keys = [ 'cpu.usage']
     host_info_head_list = ["序号","IP地址","模块名称","主机名","CPU","内存","磁盘"]
-#host_monitor_head_list = ["序号","IP地址","CPU平均使用率","CPU最大使用率","内存平均使用率","内存最大使用率","TCP-CLOSE_WAIT平均连接数","TCP-ESTABLISHED连接数","TCP-TIME_WAIT连接数"]
     host_monitor_head_list = ["序号","IP地址","CPU平均使用率","CPU最大使用率","内存平均使用率","内存最大使用率","TCP-CLOSE_WAIT平均连接数","TCP-CLOSE_WAIT最大连接数","TCP-ESTABLISHED平均连接数","TCP-ESTABLISHED最大连接数","TCP-TIME_WAIT平均连接数","TCP-TIME_WAIT最大连接数"]
     host_info_data_dict = get_host_info(hostgroup)
     host_monitor_data_dict = get_host_monitor_data(host_info_data_dict,monitor_keys)
-#    print(host_info_data_dict)
-#     print(host_monitor_data_dict)
+    # print(host_info_data_dict)
+    # print(host_monitor_data_dict)
+
     doc = docx.Document()
 
 #host_info_data_table
@@ -202,7 +201,5 @@ if __name__ == "__main__":
         host_monitor_data_rows_cells[9].text = str(item[2][7])
         host_monitor_data_rows_cells[10].text = str(item[2][8])
         host_monitor_data_rows_cells[11].text = str(item[2][9])
-
-
 
 doc.save('temp.docx')

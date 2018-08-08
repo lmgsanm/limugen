@@ -1,19 +1,26 @@
 #!/usr/bin/env python3
 __Author__ = "limugen"
 
-from docx import Document
-from docx.shared import Inches
+__Author__="limugen"
+import urllib.request
+import urllib
+import pymysql.cursors
+import sys
+import time
+import os
+import json
+import datetime
+import docx
+from pyzabbix import ZabbixAPI
 
-document = Document()
-table = document.add_table(rows=1, cols=3)
-hdr_cells = table.rows[0].cells
-hdr_cells[0].text = 'Qty'
-hdr_cells[1].text = 'Id'
-hdr_cells[2].text = 'Desc'
-for item in :
-    row_cells = table.add_row().cells
-    row_cells[0].text = str(item.qty)
-    row_cells[1].text = str(item.id)
-    row_cells[2].text = item.desc
+# def get_host_graph_url(graphid,period,stime):
+#     zabbix_graph_url = 'http://10.205.56.119/chart2.php'
+#     zabbix_graph__request_url = zabbix_graph_url + "?graphid=" + graphid + "&period=" + period + "&isNow=0&stime=" + stime
+#     return zabbix_graph__request_url
+#
+# graph_url = get_host_graph_url("8849","8849","20180711113356")
+# name = "test.png"
+# urllib.request.urlretrieve(graph_url,name)
 
-document.save('demo.docx')
+nowtime = datetime.datetime.now().strftime('%Y%m%d%H%M%S')
+print(nowtime)
