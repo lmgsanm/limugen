@@ -1,5 +1,5 @@
 version: 20180809
-sys_release_version: 1.0.1
+sys_release_version: 1.0.0
 inventory:
 #  ics-srv:
 #    -

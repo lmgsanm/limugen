@@ -10,7 +10,7 @@ zabbix_password = "WSX@abc321,"
 zapi = ZabbixAPI(zabbix_server)
 zapi.login(zabbix_user,zabbix_password)
 
-item_id = '29459'
+item_id = '34454'
 time_till = time.mktime(datetime.now().timetuple())
 time_from = time_till - 60 * 60 * 24 * 7
 

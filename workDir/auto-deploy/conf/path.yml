@@ -1,0 +1,9 @@
+version: 20180809
+remote_app_install_home: /uc/apps
+remote_app_backup_home: /uc/backup
+remote_app_version_home: /uc/version
+remote_app_logs_home: /uc/logs
+remote_tomcat_home: /uc/tomcat
+local_updatefiles_base_dir: /uc/updatefiles
+local_versions_base_dir: /uc/versions
+local_ignorefiles_base_dir: /uc/ignorefiles
